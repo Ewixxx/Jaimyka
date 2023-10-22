@@ -26,7 +26,7 @@ loginbtn.addEventListener("click",function() {
 
     if (user) {
         alert("Login successful.")
-        window.location.href=('');
+        window.location.href=('MainPage/index.html');
       
     } else {
         alert("Login failed. Invalid username or password.");
