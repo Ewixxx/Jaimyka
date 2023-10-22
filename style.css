@@ -1,194 +1,55 @@
-*{
-    padding:0;
+body {
     margin: 0;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-}
-
-body{
-    display:flex;
-    flex-direction: column;
-    flex-wrap: wrap;
+  }
+  
+  .wrapper {
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    perspective: 10px;
+  }
+  
+  header {
+    position: relative;
+    display: flex;
     justify-content: center;
     align-items: center;
-    text-align: center;
-}
-.reg-container{
-    width: 380px;
-    height: 600px;
-    background: white;
-    border-radius: 10px;
+    height: 100%;
+    transform-style: preserve-3d;
+    z-index: -1;
+  }
+  
+  .background {
+    transform: translateZ(-10px) scale(2);
+  }
+  
+  .foreground {
+    transform: translateZ(-5px) scale(1.5);
+  }
+  
+  .background,
+  .foreground {
     position: absolute;
-    top:0%;
-    left: 50%;
-    transform: translate(-50%,-50%) scale(0.1);
-    text-align: center;
-    padding: 0 30px 30px;
-    color: rgb(0, 0, 0);
-    visibility: hidden;
-    transition: transform 0.4s, top 0.4s;
-    box-shadow: rgb(58, 57, 58) 0 0 10px;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    z-index: -1;
+  }
+  
+  .title {
+    font-size: 7rem;
+    color: white;
+    text-shadow: 0 0 5px black;;
+  }
+  
+  section {
     
-}   
-.regform{
-    visibility: visible;
-    top:50%;
-    transform: translate(-50%,-50%) scale(1);
-}
-.reg-container h1{
-    padding-bottom: 5%;
-    padding-top: 5%;
-}
-
-.log-container{
-    position: relative;
-    width: 300px;
-    height: 400px;
-    border-radius: 15px;
-    box-shadow: rgb(58, 57, 58) 0 0 10px;
-    opacity: 0.9;
-    margin: 5% auto;
-}
-.log-container button{
-    margin-top: 10px;
-    text-decoration: none;
-    border-radius: 10px;
-    font-size: 20px;
-    border:0;
-    background-color: rgb(240, 215, 250);
-    height: 40px;
-    width: 90%;
-}
-
-
-/* buttons */
-#login{
-    background-color: #1F51FF;
-    color: white;
-   
-}
-#signupbtn{
-    background-color: rgba(8, 192, 23);
-    color: white;
-}
-#reg{
-    background-color: #1F51FF;
-    color: white;
-    text-decoration: none;
-    outline: 0;
-    border: 0;
-    border-radius: 5px;
-    height: 40px;
-    width: 100px;
-}
-#cancel{
-    color: rgb(255, 255, 255);
-    background-color: rgb(51, 51, 51);
-    text-decoration: none;
-    outline: 0;
-    border: 0;
-    border-radius: 5px;
-    height: 40px;
-    width: 100px;
-}
-
-#cancel:hover{
-    color: red;
-}
-
-
-/* X button */
-#back{
+    font-size: 2rem;
+    padding: 2rem;
     background:none;
-    color: rgb(0, 0, 0);
-    width: 40px;
-    font-size: 50px;
-    height: 20px;
-    text-decoration: none;
-    border: 0;
-    font-size: 30px;
-    position: relative; bottom: 85px; left: 200px;
-}
-
-
-#back:hover{
-color:red;
-}
-
-input {
-    height: 30px;
-    width: 250px;
-    margin-bottom: 5px;
-    cursor:pointer;
-    margin-top: 10%;
-    outline: none;
-}
-input::placeholder{
-    padding-left: 5px;
-    font-size: larger;
-}
-#checkbox{
-    position:relative;top:3px;
-    height: 15px;
-    width: 15px;
-    margin-right: 5px;
-    font-size: 15px;
-    margin-bottom: 20px;
-
-}
-
-.log-container h1{
-    color:rgb(0, 0, 0);
-}
-.back-icon{
-    color:rgb(0, 0, 0);
-    font-size: 25px;
-    position: relative;right:100px;bottom: 10px;
-}
-
-#loginUsername{
-    border:0;
-    border-bottom: 1px solid;
-}
-#loginPassword{
-    border:0;
-    border-bottom: 1px solid;
-}
-#registerUsername{
-    border:0;
-    border-bottom: 1px solid;
-}
-#registerPassword{
-    border:0;
-    border-bottom: 1px solid;
-}
-#registerEmail{
-    border:0;
-    border-bottom: 1px solid;
-    z-index: 10;
-}
-
-
-p{
-    opacity: 0.3;
-}
-
-#forgot-pass{
-    color: rgb(6, 64, 255);
-    text-decoration: none;
-    
-}
-#forgot-pass a{
-    padding-top: 10px;
-}
-
-#country-code{
-    width: 75px;
-    height: 33px;
-    border-radius: 4px;
-    text-decoration: none;
-}
-#phone-number{
-    border: 0;
-    border-bottom: 1px solid;
-    width: 173px;
-}
+    color: white;
+    justify-content: center;
+  }
+  section::backdrop{
+    opacity: 0.5px;
+  }
